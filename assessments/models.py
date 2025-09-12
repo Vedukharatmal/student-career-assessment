@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 
 
-class Field(models.Textchoices):
+class Field(models.TextChoices):
     ARTS = "ART", "Arts"
     SCIENCE = "SCI", "Science"
     COMMERCE = "COM", "Commerce"
@@ -21,7 +21,7 @@ class Option(models.Model):
     text = models.CharField(max_length=255)
     points = models.IntegerField(default=0)
 
-class AssessmentSession(models.MOdel):
+class AssessmentSession(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     started_at = models.DateTimeField(auto_now_add=True)
     completed_at = models.DateTimeField(null=True, blank=True)
