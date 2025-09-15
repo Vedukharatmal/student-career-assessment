@@ -1,33 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Assessment</title>
-    <style>
-        .navbar{
-            display: flex;
-            top: 0px;
-            background-color: beige;
-            align-items: center;
-            justify-content: space-between;       
-        }
-        .nav-list{
-            display: flex;
-            list-style: none;
-        }
-    </style>
+    <title>Student Career Assessment</title>
 </head>
 <body>
-    
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Register</a></li>
-            <li><a href="about"></a>About Us</li>
-            <li><a href="Contact"></a>Contact Us</li>
-        </ul>
-    </nav>    
-    
+    <header>
+        <h1>Student Career Assessment</h1>
+        {% if user.is_authenticated %}
+            <p>Logged in as {{ user.username }}</p>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>
