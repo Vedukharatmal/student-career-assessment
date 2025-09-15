@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Results - Student Career Assessment</title>
+  <title>Career Test - Student Career Assessment</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,7 +20,7 @@
       color: white !important;
       font-weight: 500;
     }
-    .result-container {
+    .test-container {
       flex: 1;
       padding: 40px 20px;
     }
@@ -30,10 +29,31 @@
       border-radius: 12px;
       box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
     }
-    .highlight {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0077b6;
+    .card-body {
+      padding: 30px;
+    }
+    .question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #023047;
+    }
+    .options label {
+      display: block;
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: 1px solid #dee2e6;
+      transition: 0.3s;
+    }
+    .options input {
+      display: none;
+    }
+    .options input:checked + label {
+      background: #0077b6;
+      color: white;
+      border-color: #0077b6;
     }
     .btn-custom {
       background-color: #0077b6;
@@ -71,22 +91,48 @@
     </div>
   </nav>
 
-  <!-- Results Content -->
-  <div class="result-container container">
+  <!-- Test Content -->
+  <div class="test-container container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card card-custom p-4">
-          <h2 class="text-center mb-4">🎉 Congratulations, {{ user.username }}!</h2>
-          <p class="text-center">Based on your responses, we suggest you explore:</p>
-          <p class="highlight text-center">{{ result.get_suggested_field_display }}</p>
+        <div class="card card-custom">
+          <div class="card-body">
+            <!-- Progress Bar -->
+            <div class="mb-4">
+              <label>Progress</label>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ progress }}%</div>
+              </div>
+            </div>
 
-          <!-- Chart -->
-          <canvas id="scoreChart" class="my-4"></canvas>
+            <!-- Question -->
+            <p class="question">{{ question.text }}</p>
 
-          <!-- Actions -->
-          <div class="text-center mt-4">
-            <a href="{% url 'dashboard' %}" class="btn btn-custom me-2">Go to Dashboard</a>
-            <a href="{% url 'start_assessment' %}" class="btn btn-custom">Retake Test</a>
+            <!-- Options -->
+            <form method="post">
+              {% csrf_token %}
+              <div class="options">
+                <input type="radio" id="opt1" name="answer" value="0">
+                <label for="opt1">Not Interested</label>
+
+                <input type="radio" id="opt2" name="answer" value="1">
+                <label for="opt2">Average</label>
+
+                <input type="radio" id="opt3" name="answer" value="2">
+                <label for="opt3">Very Much Interested</label>
+
+                <input type="radio" id="opt4" name="answer" value="3">
+                <label for="opt4">Don’t Know</label>
+              </div>
+
+              <div class="text-end mt-4">
+                {% if is_last_question %}
+                  <button type="submit" class="btn btn-custom">Submit Test</button>
+                {% else %}
+                  <button type="submit" class="btn btn-custom">Next Question</button>
+                {% endif %}
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -97,31 +143,6 @@
     <p>© 2025 Student Career Assessment. All rights reserved.</p>
   </footer>
 
-  <!-- <script>
-    const ctx = document.getElementById('scoreChart');
-    const scores = {{ result.scores|safe }};  // Django passes dict {"ART": 20, "SCI": 35, ...}
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: Object.keys(scores),
-        datasets: [{
-          label: 'Scores',
-          data: Object.values(scores),
-          backgroundColor: '#0077b6'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-  </script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
