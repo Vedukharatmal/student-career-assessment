@@ -27,29 +27,29 @@ def login_view(request):
             return redirect("dashboard")
     else:
         form = AuthenticationForm()
-    return redirect(request, "login.html", {"form":form})
+    return render(request, "assessments/login.html", {"form":form})
 
 def logout_view(request):
     logout(request)
     return redirect("landing")
 
 def landing(request):
-    return render(request, "asessments/landing.html")
+    return render(request, "assessments/landing.html")
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "assessments/about.html")
 
 def contact(request):
     if request.method == "POST":
         email =  request.POST.get("email")
         message = request.POST.get("message")
         print(f"Contact Form Submitted: {email} - {message}")
-        return render(request, "contact.html", {"success": True})
-    return render(request, "contact.html")
+        return render(request, "assessments/contact.html", {"success": True})
+    return render(request, "assessments/contact.html")
 
 @login_required
 def dashboard(request):
-    return render(request, "assessments/dashboard.html  ")
+    return render(request, "assessments/dashboard.html")
 
 @login_required
 def start_assessment(request):
@@ -79,7 +79,7 @@ def question_view(request, session_id, field):
             id__in=session.responses.filter(field=field).values_list("question_id", flat=True)
         ).first()
         if next_q:
-            return render(request, "question.html", {"session": session, "question": next_q})
+            return render(request, "assessments/question.html", {"session": session, "question": next_q})
         else:
             # all questions done → next field
             all_fields = [f[0] for f in Field.choices]
@@ -95,28 +95,12 @@ def question_view(request, session_id, field):
     # show first unanswered question of field
     answered_ids = session.responses.filter(field=field).values_list("question_id", flat=True)
     question = questions.exclude(id__in=answered_ids).first()
-    return render(request, "question.html", {"session": session, "question": question})
+    return render(request, "assessments/question.html", {"session": session, "question": question})
 
 @login_required
 def results(request, session_id):
     session = AssessmentSession.objects.get(id=session_id)
     result = session.result  # already created in calculate_result
-    return render(request, "results.html", {"result": result})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render(request, "assessments/results.html", {"result": result})
 
 
