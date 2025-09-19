@@ -3,90 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Results - Student Career Assessment</title>
+  <title>Your Results - Student Career Assessment</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-    .navbar {
-      background-color: #0077b6;
-    }
-    .navbar-brand, .nav-link {
-      color: white !important;
-      font-weight: 500;
-    }
-    .result-container {
+    .container {
       flex: 1;
       padding: 40px 20px;
     }
-    .card-custom {
-      border: none;
+    .card {
       border-radius: 12px;
       box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
     }
-    .highlight {
+    .card-body {
+      padding: 30px;
+    }
+    .result-title {
       font-size: 1.5rem;
       font-weight: bold;
       color: #0077b6;
     }
-    .btn-custom {
-      background-color: #0077b6;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-    .btn-custom:hover {
-      background-color: #023e8a;
+    .score-table th, .score-table td {
+      text-align: center;
     }
     footer {
-      text-align: center;
-      padding: 15px;
       background: #0077b6;
       color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'landing' %}">Career Assessment</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Results Content -->
-  <div class="result-container container">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card card-custom p-4">
-          <h2 class="text-center mb-4">🎉 Congratulations, {{ user.username }}!</h2>
-          <p class="text-center">Based on your responses, we suggest you explore:</p>
-          <p class="highlight text-center">{{ result.get_suggested_field_display }}</p>
+        <div class="card">
+          <div class="card-body text-center">
+            <h3 class="result-title">🎯 Suggested Career Field</h3>
+            <p class="fs-4 text-success">{{ suggested_field }}</p>
 
-          <!-- Chart -->
-          <canvas id="scoreChart" class="my-4"></canvas>
+            <hr>
+            <h5>📊 Score Breakdown</h5>
+            <table class="table table-bordered score-table mt-3">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for field, score in scores.items %}
+                  <tr>
+                    <td>{{ field }}</td>
+                    <td>{{ score }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
-          <!-- Actions -->
-          <div class="text-center mt-4">
-            <a href="{% url 'dashboard' %}" class="btn btn-custom me-2">Go to Dashboard</a>
-            <a href="{% url 'start_assessment' %}" class="btn btn-custom">Retake Test</a>
+            <div class="mt-4">
+              <a href="{% url 'dashboard' %}" class="btn btn-primary">Back to Dashboard</a>
+              <a href="{% url 'start_assessment' %}" class="btn btn-outline-success">Retake Test</a>
+            </div>
           </div>
         </div>
       </div>
@@ -97,31 +83,5 @@
     <p>© 2025 Student Career Assessment. All rights reserved.</p>
   </footer>
 
-  <!-- <script>
-    const ctx = document.getElementById('scoreChart');
-    const scores = {{ result.scores|safe }};  // Django passes dict {"ART": 20, "SCI": 35, ...}
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: Object.keys(scores),
-        datasets: [{
-          label: 'Scores',
-          data: Object.values(scores),
-          backgroundColor: '#0077b6'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-  </script> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

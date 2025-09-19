@@ -114,10 +114,32 @@ def question_view(request, session_id, field):
     )
 
 
+# @login_required
+# def results(request, session_id):
+#     session = AssessmentSession.objects.get(id=session_id)
+#     result = session.result  # already created in calculate_result
+#     return render(request, "assessments/result.html", {"result": result})
+
 @login_required
 def results(request, session_id):
-    session = AssessmentSession.objects.get(id=session_id)
-    result = session.result  # already created in calculate_result
-    return render(request, "assessments/result.html", {"result": result})
+    session = get_object_or_404(AssessmentSession, id=session_id)
+
+    # Ensure result exists (calculate if missing)
+    if not hasattr(session, "result"):
+        suggested, scores = calculate_result(session)
+    else:
+        result = session.result
+        suggested = result.suggested_field
+        scores = result.scores
+
+    return render(
+        request,
+        "assessments/result.html",
+        {
+            "session": session,
+            "suggested_field": dict(Field.choices).get(suggested, suggested),
+            "scores": scores,
+        },
+    )
 
 
