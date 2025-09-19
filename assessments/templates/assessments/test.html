@@ -101,7 +101,14 @@
             <div class="mb-4">
               <label>Progress</label>
               <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ progress }}%</div>
+                <div class="progress-bar bg-success" 
+                     role="progressbar" 
+                     style="width: {{ progress }}%;" 
+                     aria-valuenow="{{ progress }}" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">
+                  {{ progress }}%
+                </div>
               </div>
             </div>
 
@@ -109,20 +116,34 @@
             <p class="question">{{ question.text }}</p>
 
             <!-- Options -->
-            <form method="post">
+            <!-- <form method="post">
               {% csrf_token %}
               <div class="options">
-                <input type="radio" id="opt1" name="answer" value="0">
-                <label for="opt1">Not Interested</label>
+                {% for option in question.options.all %}
+                  <input type="radio" id="opt{{ forloop.counter }}" name="answer" value="{{ option.score }}">
+                  <label for="opt{{ forloop.counter }}">{{ option.text }}</label>
+                {% endfor %}
+              </div>
 
-                <input type="radio" id="opt2" name="answer" value="1">
-                <label for="opt2">Average</label>
+              <div class="text-end mt-4">
+                {% if is_last_question %}
+                  <button type="submit" class="btn btn-custom">Submit Test</button>
+                {% else %}
+                  <button type="submit" class="btn btn-custom">Next Question</button>
+                {% endif %}
+              </div>
+            </form> -->
+            <form method="post">
+              
+              {% csrf_token %}
+              <!-- Hidden question ID -->
+              <input type="hidden" name="question_id" value="{{ question.id }}">
 
-                <input type="radio" id="opt3" name="answer" value="2">
-                <label for="opt3">Very Much Interested</label>
-
-                <input type="radio" id="opt4" name="answer" value="3">
-                <label for="opt4">Don’t Know</label>
+              <div class="options">
+                {% for option in question.options.all %}
+                  <input type="radio" id="opt{{ option.id }}" name="option_id" value="{{ option.id }}" required>
+                  <label for="opt{{ option.id }}">{{ option.text }}</label>
+                {% endfor %}
               </div>
 
               <div class="text-end mt-4">
@@ -133,6 +154,7 @@
                 {% endif %}
               </div>
             </form>
+
           </div>
         </div>
       </div>
