@@ -1,0 +1,10 @@
+1#Do you enjoy solving mathematical problems and analyzing scientific concepts related to electronics engineering, such as circuit analysis and signal processing?#Strongly Agree@3#Agree@2#Disagree@1
+2#Are you interested in understanding how electronic devices, such as semiconductors and integrated circuits, are designed, manufactured, and utilized in various applications?#Strongly Like@3#Like@2#Dislike@1
+3#Do you enjoy working on long-term projects with measurable outcomes in electronics engineering, such as designing and prototyping new electronic systems or improving existing technologies?#Often@3#Sometimes@2#Never@1
+4#Are you interested in exploring interdisciplinary approaches to problem-solving in electronics engineering, such as integrating principles from physics, computer science, and materials science?#Strongly Like@1#Like@2#Dislike@3
+5#Do you prefer working with technology and tools commonly used in electronics engineering, such as oscilloscopes, multimeters, and simulation software, rather than primarily with people?#Strongly Agree@3#Agree@2#Disagree@1
+6#Do you enjoy working in a team to achieve common goals in electronics engineering projects, such as developing new electronic devices or systems, or optimizing existing designs?#Strongly Like@3#Like@2#Dislike@1
+7#Do you have good communication skills to convey complex electronic concepts to others, such as colleagues, clients, or end-users?#Often@2#Sometimes@3#Never@1
+8#Are you interested in internships and practical experiences during your studies to gain hands-on experience in electronics engineering projects, such as designing circuits or debugging electronic systems?#Often@3#Sometimes@2#Never@1
+9#Do you have a curiosity to understand the principles behind the behavior of electronic components and systems, such as how different components interact and how circuits function?#Strongly Agree@3#Agree@2#Disagree@1
+10#Are you comfortable with the idea of working in challenging and sometimes high-pressure environments, such as meeting tight deadlines for product development or troubleshooting complex electronic systems?#Often@3#Sometimes@2#Never@1

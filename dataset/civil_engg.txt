@@ -1,0 +1,17 @@
+1#Do you enjoy solving mathematical problems and analyzing scientific concepts related to civil engineering?#Strongly Agree@3#Agree@2#Disagree@1
+2#Are you interested in understanding how structures and infrastructure, such as bridges and roads, are designed and built?#Strongly Like@3#Like@2#Dislike@1
+3#Do you enjoy working on long-term projects with measurable outcomes, such as construction projects or urban planning initiatives?#Often@3#Sometimes@2#Never@1
+4#Are you interested in exploring interdisciplinary approaches to problem-solving in civil engineering, such as integrating environmental sustainability or urban planning principles?#Strongly Like@1#Like@2#Dislike@3
+5#Do you prefer working with technology and tools commonly used in civil engineering, such as CAD software or surveying equipment, rather than primarily with people?#Strongly Agree@3#Agree@2#Disagree@1
+6#Do you enjoy working in a team to achieve common goals in civil engineering projects, such as designing and constructing infrastructure or solving environmental challenges?#Strongly Like@3#Like@2#Dislike@1
+7#Do you have good communication skills to convey complex engineering ideas to others, such as clients, colleagues, or the public?#Often@2#Sometimes@3#Never@1
+8#Are you interested in internships and practical experiences during your studies to gain hands-on experience in civil engineering projects?#Often@3#Sometimes@2#Never@1
+9#Do you have a curiosity to understand the principles behind the behavior of materials and structures in civil engineering, such as how different materials withstand loads or environmental conditions?#Strongly Agree@3#Agree@2#Disagree@1
+10#Are you comfortable with the idea of working in challenging and sometimes high-pressure environments, such as managing construction projects or responding to infrastructure emergencies?#Often@3#Sometimes@2#Never@1
+
+
+                                               
+
+
+
+

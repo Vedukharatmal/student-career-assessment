@@ -55,7 +55,7 @@ def dashboard(request):
 def start_assessment(request):
     session = AssessmentSession.objects.create(user=request.user)
     first_field = Field.ARTS
-    return redirect("questions_view", session_id=session.id, field=first_field)
+    return redirect("question_view", session_id=session.id, field=first_field)
 
 @login_required
 def question_view(request, session_id, field):

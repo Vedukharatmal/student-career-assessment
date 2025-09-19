@@ -1,0 +1,10 @@
+1#Do you have any hands-on experience in commerce field?#Yes@3#Maybe@2#No@1
+2#How are your communictaion skills on scale of 10?#10-7@3#7-3@2#3-0@1
+3#Are you familiar with the current tends and advancements taking place in B.Com?#Yes@3#Maybe@2#No@1
+4#How much do you struggle with adapting to rapidly changing technologies in the field of B.Com?#A lot@1#Some@2#Not at all@3
+5#Do you believe you lack good calculating skills?#Strongly Agree@1#Agree@2#Disagree@3
+6#I find myself wondering about investment and growing.#Yes@3#Maybe@2#No@1
+7#I often engage in extracurricular activities related to Commerece and investment.#Often@3#Sometimes@2#Never@1
+8#Do you have good communication skills to convey complex investment ideas to others, such as clients, colleagues, or the public?#Often@2#Sometimes@3#Never@1
+9#Do you understand commerce related concepts?#Yes@3#Maybe@2#No@1
+10#Are you famailiar with the concept of e-commerce?#Yes@3#Maybe@2#No@1

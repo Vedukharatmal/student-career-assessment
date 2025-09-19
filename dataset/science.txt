@@ -1,0 +1,10 @@
+1#I enjoy doing science projects.#Strongly Agree@3#Agree@2#Disagree@1
+2#I find myself wondering and searching about science realted topics.#Strongly agreee@3Agree@2#Disagree@1
+3#Are you familiar with the current tends and advancements taking place in B.sc?#Yes@3#Maybe@2#No@1
+4#Do you prefer theoretical knowledge or hands-on, practical applications?#Yes@3#Maybe@2#No@1 
+5#I find myself enjoying during working in the lab.#Strongly agree@3#Agree@2#Disagree@1
+6#Are you good in mathematics?#Yes@3#Maybe@2#No@1
+7#I do find myself intrigued about the gravity on earth.#Strongly agree@3#Agree@2#Disagree@1
+8#Do you have any hand-on experience in the science field?#Yes@3#Maybe@2#No@1
+9#I am sure that pursuing a degree in B.Sc will provide me with valuable skills for the future job market.#Sure@3#Not sure@2#No@1
+10#Do you read articles related to science field?#Frequently@3#Ocassionally@2#Rarely@1

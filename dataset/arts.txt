@@ -1,0 +1,10 @@
+1#I believe that pursuing a career in the arts offers opportunities for creative expression and personal fulfillment.#Agree@3#maybe@2#Nope@1
+2#I am confident in my artistic abilities and skills.#agree@3#maybe@2#disagree@1
+3#I think that artistic creativity and innovation are essential for success in the arts.#Agree@3#maybe@2#disagree@1
+4#I am interested in exploring different art forms and techniques.#Agree@3#maybe@2#disagree@1
+5#I believe that studying art history and theory is valuable for understanding the context of artworks.#agree@3#maybe@2#disagree@1
+6#I am unsure about the financial stability of a career in the arts and whether it aligns with my long-term goals.#agree@1#maybe@2#disagree#3
+7#I disagree that it's acceptable to plagiarize or copy someone else's artwork without permission or credit.#agree@1#maybe@2#disagree@3
+8#I am interested in the role of the arts in social and cultural change.#yes@3#maybe@2#no@1
+9#I am ready to face every challenges faced in the arts field.#yes@3#maybe@2#no@1
+10#Are you aware of the fact that only successfull artists make money for their living while others face hard time following it?#Yes@3#not sure@2#No@1

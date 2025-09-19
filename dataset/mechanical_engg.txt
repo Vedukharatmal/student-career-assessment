@@ -1,0 +1,10 @@
+1#I believe that mechanical engineering offers diverse and challenging career opportunities.#Agree@3#Not sure@2#Disagree@1
+2#I think that creativity and innovation are important aspects of being a successful mechanical engineer.#Agree@3#not sure@2#Disagree@1
+3#I believe that strong mathematical and analytical skills are essential for a career in mechanical.#agree@3#not sure@2#disagree@1
+4#I am unsure about the level of hands-on work involved in mechanical engineering and whether it aligns with my preferences.#Agree@1#not sure@2#disagree@3
+5#I think that teamwork and collaboration are important aspects of working in the field of mechanical engineering.#Agree@3#not sure@2#disagree@1
+6#I disagree that it's ethical to engage in dishonest or fraudulent practices, such as falsifying data or reports, in the course of my work as a mechanical engineer.#Agree@1#not sure@2#Disagree@3
+7#I am very passionate about machines.#agree@3#not sure@2#disagree@1
+8#I am ready to devote countless hours for mechanical engineering.#Agree@3#not sure@2#disagree@1
+9#Are you creative enough to make designs?#Yes@3#maybe@2#no@1
+10#Are you willing to work in a fast paced and challenging environment?#Yes@3#Maybe@2#NO@1

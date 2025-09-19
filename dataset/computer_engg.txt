@@ -1,0 +1,10 @@
+1#Computer engineering aligns with my career goals.#Strongly Agree@3#Agree@2#Disagree@1
+2#I have a strong interest in any of the field cybersecurity or ethical hacking or artificial intelligence or Web Development or Game Development or Machine Learning or Data Science or Internet of Things.#Interest@3#Not Interested@1#Average@2
+3#How frequently do you engage in reading articles or watching videos on the latest advancements in computer science#Frequently@3#Occasionally@2#Rarely@1
+4#I am sure that computer engineering offers ample opportunities for innovation and creativity.#Sure@3#Not sure@2#No@1
+5#Do you believe you lack good analytical skills?#Strongly Agree@1#Agree@2#Disagree@3
+6#I am sure that pursuing a degree in computer engineering will provide me with valuable skills for the future job market.#Sure@3#Not sure@2#No@1
+7#I often find myself troubleshooting computer or software issues for friends and family.#Often@3#Sometimes@2#Never@1
+8#I often engage in extracurricular activities related to computer programming or engineering.#Often@3#Sometimes@2#Never@1
+9#How much do you struggle with adapting to rapidly changing technologies in the field of computer engineering?#A lot@1#Some@2#Not at all@3
+10#Programming appeals to me as a way to create innovative solutions.#Interest@3#Not Interested@1#Average@2
